@@ -63,7 +63,6 @@ var checkUrlFile = function(url, checksfile) {
 	    sys.puts('Error: ' + result.message);
 	    this.retry(5000); // try again after 5 sec
 	} else {
-	    // sys.puts(result)
 	    $ = cheerio.load( result );
 	    var checks = loadChecks( checksfile ).sort();
 	    var out = {};
@@ -71,15 +70,13 @@ var checkUrlFile = function(url, checksfile) {
 		var present = $(checks[ii]).length > 0;
 		out[checks[ii]] = present;
 	    }
-	    console.log(out)
-	}
-    
 	    
-	    return out;
-	});
-				       return checksURL
+	}
+	console.log(out);
+    }); //console.log(checksURL);
+    // return checksURL
 };
-
+    
 var clone = function(fn) {
     // Workaround for commander.js issue.
     // http://stackoverflow.com/a/6772648
@@ -95,12 +92,12 @@ if(require.main == module) {
     // var checkJson = checkHtmlFile(program.file, program.checks);
     //var checkJson = checkUrlFile(program.url, program.checks);
     //var outJson = JSON.stringify(checkJson, null, 4);
-    //console.log("hello");
+    //checkUrlFile(program.url,program.checks);
 } else {
     console.log("error poop");
     //exports.checkHtmlFile = checkHtmlFile;
 }
 
 if (program.url){
-checkUrlFile(program.url, program.checks);
+ checkUrlFile(program.url, program.checks);
 }
