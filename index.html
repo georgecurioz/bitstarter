@@ -10,11 +10,35 @@
 	  href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-2.3.2.css">
     <style type="text/css">
       
-      /* Large Desktop *
+      /* Large Desktop */
       @media (min-width: 980px) {
       body {
       padding-top: 60px;
       }
+      }
+      
+      /* All form factors */
+      /* Main body and headings */
+      body{
+      font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+      }
+      .heading, .subheading {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        text-align: center;
+      }
+      p.lead { 
+        padding-top: 1.5%;
+        font-size: 24px;
+        line-height: 30px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      
+      /* Video pitch and Action */
+      .pitch { 
+      padding: 2.5% 0%;
       }
 
       Original Template
@@ -73,7 +97,9 @@
     </div>
   </div>
 
-	       
+<!-- We use row-flud inside containers to achieve a resizable layout. -->  
+
+      
   <div class="container">
     <div class="row navigation">
       <div class="span2 logo">
@@ -86,20 +112,23 @@
 	About
       </div>
     </div>
-    <div class="row heading">
+    <div class="row-fluid heading">
       <div class="span12">
 	<h1>Bitstarter Title</h1>
       </div>
     </div>
-    <div class="row subheading">
+    <div class="row-fluid subheading">
       <div class="span12">
 	<p class="lead">This is my first bitstarter project.</p>
       </div>
     </div>
-    <div class="row pitch">
-      <div class="span6 video">
-	Video
+    <div class="row-fluid pitch">
+      <div class="span5 offset1 video">
+	<img class="img-polaroid" src="http://placehold.it/480x300">
       </div>
+
+<!-- We define a new 'actions div to contain statistics, order, and share buttons.-->
+
       <div class="span6">
 	<div class="thermometer">
 	  Thermometer
